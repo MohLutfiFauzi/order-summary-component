@@ -1,0 +1,129 @@
+$primary: (
+  "pale-blue": hsl(225, 100%, 94%),
+  "bright-blue": hsl(245, 75%, 52%),
+);
+
+$neutral: (
+  "very-pale-blue": hsl(225, 100%, 98%),
+  "desaturated-blue": hsl(224, 23%, 55%),
+  "dark-blue": hsl(223, 47%, 23%),
+);
+
+.App {
+  min-width: 100wh;
+  display: flex;
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  padding-block: 2rem;
+
+  .card-summary {
+    width: min-content;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: white;
+    -webkit-box-shadow: 0px 59px 152px -68px rgb(109, 101, 227);
+    -moz-box-shadow: 0px 59px 152px -68px rgb(109, 101, 227);
+    box-shadow: 0px 59px 152px -68px rgb(109, 101, 227);
+
+    .container {
+      padding-inline: 3em;
+      padding-block: 2.5em;
+      background-color: white;
+
+      .card-summary__title {
+        text-align: center;
+        font-size: 1.75rem;
+        font-weight: 900;
+        color: map-get($neutral, "dark-blue");
+      }
+
+      .card-summary__desc {
+        text-align: center;
+        color: map-get($neutral, "desaturated-blue");
+        margin-top: 1em;
+        line-height: 1.6;
+        font-weight: 500;
+        font-size: 1rem;
+        word-spacing: 1px;
+      }
+
+      .card-summary__btn-payment {
+        width: 100%;
+      }
+
+      .container-music {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: map-get($neutral, "very-pale-blue");
+        margin-block: 1.3em;
+        padding: 1.4em;
+        overflow: hidden;
+        border-radius: 0.5rem;
+
+        .container-price {
+          margin-right: auto;
+          margin-left: 1.4em;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          .card-summary__price-name {
+            font-size: 1rem;
+            color: map-get($neutral, "dark-blue");
+            font-weight: 900;
+          }
+
+          .card-summary__price {
+            color: map-get($neutral, "desaturated-blue");
+            font-weight: 500;
+          }
+        }
+
+        .card-summary__change-price {
+          font-weight: 700;
+          font-size: 14px;
+
+          &:hover {
+            text-decoration: none;
+            color: rgb(82, 71, 227);
+          }
+        }
+      }
+
+      .card-summary__btn-payment {
+        border: none;
+        background-color: map-get($primary, "bright-blue");
+        color: map-get($neutral, "very-pale-blue");
+        font-size: 1rem;
+        padding: 0.8em;
+        margin-block: 1em;
+        font-family: inherit;
+        font-weight: 700;
+        border-radius: 0.5rem;
+        -webkit-box-shadow: 0px 18px 21px -17px rgba(31, 19, 196, 1);
+        -moz-box-shadow: 0px 18px 21px -17px rgba(31, 19, 196, 1);
+        box-shadow: 0px 18px 21px -17px rgba(31, 19, 196, 1);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(82, 71, 227);
+        }
+      }
+
+      .card-summary__btn-cancel-order {
+        margin-top: 1rem;
+        display: block;
+        text-align: center;
+        font-weight: 900;
+        color: map-get($neutral, "desaturated-blue");
+        text-decoration: none;
+
+        &:hover {
+          color: map-get($neutral, "dark-blue");
+        }
+      }
+    }
+  }
+}
